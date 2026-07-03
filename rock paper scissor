@@ -1,27 +1,41 @@
 import random
-comp = random.randint(0, 2)
-user = str(input(" 0 for rock, 1 for paper, 2 for scissors: "))
-print(comp)
-def game(comp,user):
-    if comp==0 and user=='0':
+
+def greet(fx):
+    def mfx(*args, **kwargs):
+        print("Welcome to game")
+        fx(*args, **kwargs)
+        print("Thanks for playing this game")
+    return mfx
+
+@greet
+def game():
+    comp = random.randint(0, 2)
+    user = input("0 for Rock, 1 for Paper, 2 for Scissors: ")
+
+    print(f"Computer chose: {comp}")
+
+    if comp == 0 and user == '0':
         print("Draw")
-    elif comp==0 and user=='1':
-            print("You win")
-    elif comp==0 and user=='2':
-        print("You lose")
-    elif comp==1 and user=='0':
-        print("You lose")
-    elif comp==1 and user=='1':
-        print("Draw")
-    elif comp==1 and user=='2':
-        print("You win")    
-    elif comp==2 and user=='0':
+    elif comp == 0 and user == '1':
         print("You win")
-    elif comp==2 and user=='1':
+    elif comp == 0 and user == '2':
         print("You lose")
-    elif comp==2 and user=='2':
+    elif comp == 1 and user == '0':
+        print("You lose")
+    elif comp == 1 and user == '1':
+        print("Draw")
+    elif comp == 1 and user == '2':
+        print("You win")
+    elif comp == 2 and user == '0':
+        print("You win")
+    elif comp == 2 and user == '1':
+        print("You lose")
+    elif comp == 2 and user == '2':
         print("Draw")
     else:
         print("Invalid input")
-game(comp,user)
+
+game()
+
+
         
