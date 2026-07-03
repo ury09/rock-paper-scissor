@@ -1,12 +1,10 @@
 import random
-
 def greet(fx):
     def mfx(*args, **kwargs):
         print("Welcome to game")
         fx(*args, **kwargs)
         print("Thanks for playing this game")
     return mfx
-
 @greet
 def game():
     comp = random.randint(0, 2)
@@ -36,6 +34,3 @@ def game():
         print("Invalid input")
 
 game()
-
-
-        
